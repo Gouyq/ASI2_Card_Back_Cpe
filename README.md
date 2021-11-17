@@ -93,4 +93,54 @@ dans un bus de communication en objet ?
 		- Les "components" sont les classes annotées avec `@Controller`, `@Service`, `@Repository`, `@Component` ou encore `@Bean`.
 		- D'une manière similaire à `@EntityScan`, l'annotation `@ComponentScan` permet de spécifier le package dans lequel chercher les classes avec les annotations précédentes. En revanche, on pourra utiliser cette annotation sans paramètre si l'on veut scanner le package ou les sous-packages courants.
 		- Sources : https://www.baeldung.com/spring-entityscan-vs-componentscan
-	
+
+# Atelier 2
+## Questions
+
+- Qu’est ce que les websockets ? Comment fonctionne-t-elle ?
+	- L'API WebSocket est une technologie évoluée qui permet d'ouvrir un canal de communication bidirectionnelle entre un navigateur (côté client) et un serveur. Avec cette API vous pouvez envoyer des messages à un serveur et recevoir ses réponses de manière événementielle sans avoir à aller consulter le serveur pour obtenir une réponse.
+	- Le protocole WebSocket permet d'ouvrir un canal de communication bidirectionnel (ou "full-duplex") sur un socket TCP pour les navigateurs et les serveurs web. Plus spécifiquement, il permet donc : la notification au client d'un changement d'état du serveur et l'envoi de données en mode « pousser » (méthode Push) du serveur vers le client, sans que ce dernier ait à effectuer une requête.
+	- Sources : https://developer.mozilla.org/fr/docs/Web/API/WebSockets_API, https://fr.wikipedia.org/wiki/WebSocket
+- Quelle est la différence entre socket.io et les web sockets ?
+	- socket.io est une librairie qui utilise l'API WebSocket pour le transport et la communication d'évènement bidirectionnel en temps réel. Pour autant, ce n'est pas une implémentation de WebSocket mais plutôt un wrapper léger de WebSocket.
+	- Sources : https://socket.io/docs/v4/
+- Qu’est ce que npm ? comment fonctionne-t-il ?
+	- npm est le gestionnaire de paquets officiel de Node.js. Il consiste en un site web, un CLI (Command Line Interface) et une base de données qui répertorie tous les packages Node.js. On utilise principalement Node.js à travers le CLI (commandes npm). Sur le site web, on peut se créer un compte, découvrir les nombreux packages existants et partager ses propres packages. La base de données contient naturellement tous les packages que l'on pourra installer à travers npm.
+	- Sources : https://docs.npmjs.com/about-npm
+- Qu’est ce qu’une fonction de callback ?
+	- C'est une fonction exécutée à la fin d'une autre fonction (souvent utilisée dans les cas de figure asynchrones).
+- Expliquer la différence entre une programmation séquentielle et une programmation 
+évènementielle.
+	- La programmation séquentielle est un paradigme dans lequel le déroulement des instructions du programme est toujours le même (séquence : suite ordonnée d'éléments ou d'opération). A l'inverse, on parle de programmation évènementielle quand la séquence d'instructions exécutée est déterminée ou modifiée en permanence par les différents événements extérieurs ayant une incidence sur le traitement durant son exécution (inputs du user, messages reçus, etc.).
+	- Sources : https://fr.wikipedia.org/wiki/Programmation_s%C3%A9quentielle
+- Pourquoi a-ton besoin d’utiliser un proxy pour qu’on web browser puisse communiquer avec deux 
+backend différents ?
+	- Pour pouvoir faire de la redirection de requête et ainsi n'avoir qu'un seul point d'entrée pour les deux backend. On pourra aussi l'utiliser pour mettre en place des routes publiques ou privées.
+- Quels sont les principaux avantages de nodejs  vis-à-vis d’autre serveur web (E.g apache tomcat + Springboot) ?
+	- 
+- La communication via websocket consomme-t-elle plus de ressource coté serveur ? 
+- Comment peut-on réaliser une authentification pour une application qui possèdent  des backends 
+distinct ?
+- Quels arguments/situations peuvent conduire à l’usage d’un bus de communication pour une 
+communication entre backends plutôt que les webServices ? 
+- Qu'est-ce qu'un callback ? Qu'est-ce qu'une promise ? Qu'est-ce qu'un observable ? 
+	- Callback : c'est une fonction exécutée à la fin d'une autre fonction (souvent utilisée dans les cas de figure asynchrones).
+	- Promise : permet les traitements asynchrones à travers une valeur qui peut éventuellement être disponible (maintenant, dans le futur voire jamais. Typiquement, on attache deux fonctions callback à une promesse : resolve (si la promesse a fonctionné) ou reject (dans le cas contraire).
+	- Observable : similaire aux promesses, sauf qu'une promesse n'est remplie qu'une seule fois alors qu'un observable permet de traiter une donnée au fur et à mesure de son arrivée. Ainsi, un observable est un "event emitter" avec un concept de complétion : par exemple, on peut écouter à chaque fois qu'une touche est pressée, mais si "entrée" est pressée, alors on termine notre observer.
+	- Sources : https://putaindecode.io/articles/introduction-aux-patterns-des-observables/
+- Alternative à activemq ?
+	- Pas mal d'alternatives existent : RabbitMQ, ZeroMQ, Sparrow, Starling, Faucon, Beanstalkd, Amazon SQS, Kafka, ZMQ, IronMQ, ...
+	- Sources : https://www.it-swarm-fr.com/fr/jms/activemq-ou-rabbitmq-ou-zeromq-ou/957954253/
+- Q'est-ce que Spring Framework par rapport à SpringBoot ?
+	- SpringBoot est une sorte d'extension de Spring (Framework) qui permet de faciliter la configuration et de raccourcir le code souvent très verbeux de Spring.
+- Quel partie de SpringBoot permet de créer des web services REST ?
+	- La dépendance spring-webmvc (et toutes les annotations qui vont bien (@EnableMvc, @ComponentScan, etc.).
+	- Sources : https://www.baeldung.com/bootstraping-a-web-application-with-spring-and-java-based-configuration
+- Qu'est-ce qu'ExpressJS ? Quels sont les alternatives ?
+	- ExpressJS est une "infrastructure Web minimalise, souple et rapide pour Node.js". Il permet donc de faciliter la mise en place de l'architecture, le routing, etc.
+	- Différents packages node existent, tels que Fastify ou encore Koa. On peut même se débrouiller avec les outils natifs de Node.js.
+	- Sources : https://expressjs.com/fr/, https://blog.logrocket.com/forget-express-js-opt-for-these-alternatives-instead/
+- Quel est le transport utilisé par Spring pour communiquer avec activemq ?
+	- A travers un client JMS (Java Message Service)
+- Quel est le transport utilisé par Nodejs pour communiquer avec activemq ?
+	- On pourra passer par des requêtes HTTP (par ailleurs, une librairie Node.js appelée stompit peut faciliter la communication avec activemq).
