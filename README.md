@@ -117,7 +117,7 @@ dans un bus de communication en objet ?
 backend différents ?
 	- Pour pouvoir faire de la redirection de requête et ainsi n'avoir qu'un seul point d'entrée pour les deux backend. On pourra aussi l'utiliser pour mettre en place des routes publiques ou privées.
 - Quels sont les principaux avantages de nodejs  vis-à-vis d’autre serveur web (E.g apache tomcat + Springboot) ?
-	- 
+	- TODO
 - La communication via websocket consomme-t-elle plus de ressource coté serveur ? 
 - Comment peut-on réaliser une authentification pour une application qui possèdent  des backends 
 distinct ?
@@ -131,7 +131,7 @@ communication entre backends plutôt que les webServices ?
 - Alternative à activemq ?
 	- Pas mal d'alternatives existent : RabbitMQ, ZeroMQ, Sparrow, Starling, Faucon, Beanstalkd, Amazon SQS, Kafka, ZMQ, IronMQ, ...
 	- Sources : https://www.it-swarm-fr.com/fr/jms/activemq-ou-rabbitmq-ou-zeromq-ou/957954253/
-- Q'est-ce que Spring Framework par rapport à SpringBoot ?
+- Qu'est-ce que Spring Framework par rapport à SpringBoot ?
 	- SpringBoot est une sorte d'extension de Spring (Framework) qui permet de faciliter la configuration et de raccourcir le code souvent très verbeux de Spring.
 - Quel partie de SpringBoot permet de créer des web services REST ?
 	- La dépendance spring-webmvc (et toutes les annotations qui vont bien (@EnableMvc, @ComponentScan, etc.).
